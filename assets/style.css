@@ -1,12 +1,16 @@
-.avatar {
-  width: 100px;     /* Adjust this number smaller/larger as needed */
-  height: 100px;
-  border-radius: 50%;   /* Makes it circular */
-  object-fit: cover;    /* Keeps proportions, crops if needed */
-  display: block;
-  margin: 0 auto 20px;  /* Centers it with spacing below */
+html, body {
+  background-color: #e6f0ff; /* Light Blue base background */
+
+.hero { /* Center alignment */
+  text-align: center;
+  padding: 24px 16px;
 }
 
-body {
-  background: lightblue;
+.avatar {  /* Portrait Image */
+  width: 100px;     
+  height: 100px;
+  border-radius: 50%;  
+  object-fit: cover;    
+  display: block;
+  margin: 0 auto 20px;  
 }
