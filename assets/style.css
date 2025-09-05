@@ -7,3 +7,6 @@
   margin: 0 auto 20px;  /* Centers it with spacing below */
 }
 
+body {
+  background: lightblue;
+}
