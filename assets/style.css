@@ -8,6 +8,12 @@ html, body {
   padding: 24px 16px;
 }
 
+.hero p {
+  font-size: 1.2em;
+  font-weight: bold:
+  margin-top: 10px
+}
+
 /* Portrait Image */
 .avatar {  
   width: 100px;     
