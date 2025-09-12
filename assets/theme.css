@@ -84,7 +84,7 @@ a:focus-visible, .btn:focus-visible{
 }
 .btn:hover{ background: var(--accent-700); }
 
-/* --- Nice centering for section text --- */
+/* --- Centering for section text --- */
 .portfolio-section{ text-align: center; }
 .portfolio-section p{ margin-left: auto; margin-right: auto; }
 
@@ -95,7 +95,7 @@ a:focus-visible, .btn:focus-visible{
     --ring:#1e293b; --accent:#60a5fa; --accent-700:#3b82f6;
   }
   html{ background:#0b1220; }   /* keep html + body in sync */
-  body{ background:#0b1220; }   /* flat fill to avoid gradient banding if you prefer */
+  body{ background:#0b1220; }   
   .card{ border-color:#1e293b; box-shadow:none; }
 }
 
@@ -110,4 +110,12 @@ a:focus-visible, .btn:focus-visible{
   box-shadow: 0 6px 18px rgba(37,99,235,.15);
   margin-bottom:1rem;
 }
-.hero p{ color: var(--muted); margin:.25rem 0 0; }
+
+.hero p{
+  color: var(--muted);
+  margin: .25rem auto 0;   
+  text-align: center;      
+  max-width: 60ch;         
+  font-weight: 600;        
+}
+
