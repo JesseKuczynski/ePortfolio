@@ -119,3 +119,12 @@ a:focus-visible, .btn:focus-visible{
   font-weight: 600;        
 }
 
+/* Prevents word breaks in cards/sections */
+.card p,
+.portfolio-section p {
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  overflow-wrap: normal;   
+  word-break: normal;
+}
