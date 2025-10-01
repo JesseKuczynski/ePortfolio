@@ -1,0 +1,103 @@
+<div *ngIf="loading">Loading…</div>
+
+<section *ngIf="!loading && trip">
+  <h2 class="mb-2">{{ trip.name }}</h2>
+  <p class="text-muted">
+    {{ trip.length }} days • {{ trip.resort }} •
+    {{ trip.perPerson | currency:'USD':'symbol' }} per person
+  </p>
+
+  <img
+    *ngIf="trip.image"
+    [src]="'/assets/images/' + trip.image"
+    [attr.alt]="trip.name || 'Trip image'"
+    class="img-fluid mb-3"
+  />
+
+  <p class="mb-3" [innerHTML]="trip.description"></p>
+  <hr class="my-4" />
+
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" novalidate>
+    <fieldset [disabled]="loading">
+
+      <div class="mb-3">
+        <label class="form-label" for="fullName">Full name</label>
+        <input
+          id="fullName"
+          class="form-control"
+          type="text"
+          formControlName="fullName"
+          required
+          maxlength="120"
+          autocomplete="name"
+          [class.is-invalid]="submitted && f['fullName'].invalid"
+        />
+        <div class="invalid-feedback" *ngIf="submitted && f['fullName'].errors?.['required']">
+          Name is required.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="email">Email</label>
+        <input
+          id="email"
+          class="form-control"
+          type="email"
+          formControlName="email"
+          required
+          autocomplete="email"
+          [class.is-invalid]="submitted && f['email'].invalid"
+        />
+        <div class="invalid-feedback" *ngIf="submitted && f['email'].errors">
+          Valid email required.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="travelers">Travelers</label>
+        <input
+          id="travelers"
+          class="form-control"
+          type="number"
+          min="1"
+          step="1"
+          formControlName="travelers"
+          required
+          inputmode="numeric"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="start">Preferred start date</label>
+        <input
+          id="start"
+          class="form-control"
+          type="date"
+          formControlName="start"
+          required
+          [min]="minDate"
+          autocomplete="off"
+          [class.is-invalid]="submitted && f['start'].invalid"
+        />
+        <div class="invalid-feedback" *ngIf="submitted && f['start'].errors?.['minDate']">
+          Date can’t be in the past.
+        </div>
+      </div>
+
+      <p class="text-muted">
+        Total: {{ total | currency:'USD':'symbol' }}
+      </p>
+
+      <button
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="bookingForm.invalid || loading"
+      >
+        Book Now
+      </button>
+    </fieldset>
+
+    <!-- Cancel outside the disabled fieldset -->
+    <a class="btn btn-link mt-2" [routerLink]="['/']">Cancel</a>
+  </form>
+</section>
