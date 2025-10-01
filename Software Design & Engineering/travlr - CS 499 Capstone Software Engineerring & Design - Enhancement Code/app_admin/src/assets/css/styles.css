@@ -1,0 +1,14 @@
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+
+  background-color: #ffb744;
+  background-image:
+    url('/assets/images/bg-pattern.jpg'), /* top layer */
+    url('/assets/images/bg-body.jpg');    /* base layer */
+  background-repeat: repeat-x, repeat;
+  background-position: center top, left bottom;
+}
+

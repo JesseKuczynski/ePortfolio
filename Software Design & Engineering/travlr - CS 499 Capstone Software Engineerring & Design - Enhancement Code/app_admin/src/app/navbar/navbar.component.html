@@ -1,0 +1,20 @@
+<header class="legacy-header">
+  <div class="page">
+    <a class="logo" routerLink="/">
+      <img src="/assets/images/logo.png" alt="Travlr Getaways">
+    </a>
+
+    <nav class="auth">
+      <a class="auth-link" routerLink="/login" *ngIf="!isLoggedIn()">Log In</a>
+      <a class="auth-link" (click)="onLogout()" *ngIf="isLoggedIn()">Log Out</a>
+    </nav>
+  </div>
+
+  <nav class="legacy-nav">
+    <ul>
+      <li routerLinkActive="selected" [routerLinkActiveOptions]="{ exact: true }">
+        <a routerLink="/">Trips</a>
+      </li>
+    </ul>
+  </nav>
+</header>
