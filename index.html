@@ -76,15 +76,91 @@ I selected this project for Software Engineering and Design because there are mu
 
 
 
-    <section class="card portfolio-section">
-      <h2>Algorithms &amp; Data Structures</h2>
-      <p>[Placeholder]</p>
-    </section>
+<section class="card portfolio-section" id="algorithms" style="text-align: left;">
+  <h2>Algorithms &amp; Data Structures</h2>
 
-    <section class="card portfolio-section">
-      <h2>Databases</h2>
-      <p>[Placeholder]</p>
-    </section>
+  <p>
+    For my second enhancement covering Algorithms and Data Structures, I have chosen to work on a project that was created in the Software Development Lifecycle course. This artifact was a resort destination slideshow created in Java. The project itself was a runnable Java file that, when executed, would display five separate slides with captioned titles and descriptions of what each image was, cycling through the images with “Next” and “Previous” buttons. I felt showcasing this project alongside others would demonstrate a well-rounded understanding of different coding languages and object-oriented programming.
+  </p>
+
+  <p>
+    I chose this project for Algorithms and Data Structures for its existing logic around displaying text, images, and navigation. My enhancement added two new controls: a <strong>Random</strong> button that jumps to one of the five slides using a uniform random selection, and a <strong>Theme</strong> button that cycles the background theme for the caption container and the navigation row. These were integrated into a container that keeps captions and controls anchored at the bottom while staying in sync with the slide index via a <code>showByIndex()</code> method.
+  </p>
+
+  <p>
+    These enhancements illustrate course outcomes including: designing and evaluating computing solutions using algorithmic principles; communicating technical changes clearly through UI affordances; and applying well-founded software techniques (randomized selection for non-linear navigation and cohesive state management).
+  </p>
+
+  <p>
+    During implementation I hit several Java-specific issues that required research, including a warning about an unserialized class. I learned that the check ensures the class definition matches serialized bytes; adding <code>private static final long serialVersionUID = 1L;</code> resolved the warning. Overall, the work deepened my comfort with Java’s syntax and UI patterns compared to languages I use more often, like Python.
+  </p>
+
+  <figure style="margin: 1.5rem 0;">
+    <img
+      src="assets/img/Java Slideshow Enhancement.png"
+      alt="Java slideshow enhancement with Random and Theme buttons visible"
+      loading="lazy"
+      style="width:100%; height:auto; border-radius:10px;"
+    >
+    <figcaption style="font-size:.9rem; opacity:.8; margin-top:.5rem;">
+      Java Slideshow — Random jump &amp; theme cycling enhancements
+    </figcaption>
+  </figure>
+
+  <p style="text-align:center;">
+    <a class="btn"
+       href="https://github.com/JesseKuczynski/ePortfolio/tree/main/Algorithms%20and%20Data%20Structure"
+       target="_blank" rel="noopener noreferrer">
+      View the artifact’s code
+    </a>
+  </p>
+</section>
+
+
+<section class="card portfolio-section" id="databases" style="text-align: left;">
+  <h2>Databases</h2>
+
+  <p>
+    The original artifact for this project was built for the CS-340 Client and Server Development course. The artifact itself centers around a database access layer—<code>animal_shelter.py</code>—which performs CRUD methods on a dataset before launching a Jupyter Notebook dashboard that displays the collected data in an interactive table, graph, and map. The original project was completed in February of 2025.
+  </p>
+
+  <p>
+    I selected this project because it showcases database engineering that extends beyond standard read and write operations. For my enhancement, I implemented <strong>bulk operations</strong> such as <code>bulk_insert()</code>, <code>bulk_update()</code>, and <code>bulk_delete()</code>, as well as an aggregation method, <code>counts_by_field()</code>. Additionally, I removed hard-coded secrets and introduced <strong>environmental variables</strong> to ensure sensitive configuration data is protected. The project was also reconfigured from its original classroom Apporto environment to a <strong>local MongoDB instance</strong> to validate data loading and end-to-end functionality.
+  </p>
+
+  <p>
+    These enhancements meet my intended outcomes by strengthening the database design and demonstrating sound software engineering practices. The expanded CRUD methods show proficiency in scalable data handling, while the inclusion of environmental variables demonstrates secure coding principles and a clear security mindset.
+  </p>
+
+  <p>
+    The work ultimately required far more refactoring than I initially anticipated. Since the original code was tightly coupled to a hosted classroom environment, I not only updated the Python CRUD logic but also refactored the Jupyter Notebook integration to maintain functionality across all new methods. This included installing and validating required dependencies and researching compatible package versions to ensure a smooth runtime experience.
+  </p>
+
+  <p>
+    Reflecting on the process, rebuilding and reconnecting this artifact end-to-end provided a valuable learning experience. I gained practical understanding of MongoDB’s aggregation pipelines for generating meaningful summaries, and I reinforced secure development habits through proper handling of environment variables. I also learned the importance of dependency management when migrating or updating software between environments such as Apporto and local setups.
+  </p>
+
+  <figure style="margin: 1.5rem 0;">
+    <img
+      src="assets/img/Enhancement Notebook Screen Capture 2.png"
+      alt="Jupyter Notebook showing enhanced MongoDB aggregation and CRUD operations"
+      loading="lazy"
+      style="width:100%; height:auto; border-radius:10px;"
+    >
+    <figcaption style="font-size:.9rem; opacity:.8; margin-top:.5rem;">
+      Enhanced Jupyter Notebook — Expanded CRUD and Aggregation Demonstration
+    </figcaption>
+  </figure>
+
+  <p style="text-align:center;">
+    <a class="btn"
+       href="https://github.com/JesseKuczynski/ePortfolio/tree/main/Databases"
+       target="_blank" rel="noopener noreferrer">
+      View the artifact’s code
+    </a>
+  </p>
+</section>
+
 
   </main>
 </body>
